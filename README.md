@@ -1,7 +1,7 @@
 # Chess-Engine
 The classic game of chess written in python and pygame.
 
-(chess.png)
+![Screenshot](chess.png)
 
 - Castling, checkmates, and other important rules.
 - Human vs human and human vs AI game modes
