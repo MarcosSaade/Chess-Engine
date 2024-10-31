@@ -15,6 +15,6 @@ A Python-powered chess game with both human-vs-human and human-vs-AI modes, buil
     - **Move Memory**: Retains valuable moves across sessions, allowing the engine to improve incrementally.
 
 ## Project Overview
-Built during high school, this project features over 2000 lines of code and provided hands-on experience with core data structures and algorithms. I applied techniques like tree search, pruning, and memory handling to develop a strategic, fully functional chess engine.
+Built on my spare time during high school, this project features over 2000 lines of code and provided hands-on experience with core data structures and algorithms. I applied techniques like tree search, pruning, and memory handling to develop a strategic, fully functional chess engine.
 
 Some areas in the code have room for refinement, but this project helped me deepen my skills in Python, algorithm design, and game development, and it was really fun to build!.
