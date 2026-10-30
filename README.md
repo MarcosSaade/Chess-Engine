@@ -1,20 +1,35 @@
 # Chess Engine
 
-A Python-powered chess game with both human-vs-human and human-vs-AI modes, built using Pygame.
+A chess game and engine in Python and Pygame, with human-vs-human and human-vs-AI modes. I wrote it in high school as a side project to learn search algorithms and game programming.
 
 ![Screenshot](chess.png)
 
-## Key Features
-- **Game Mechanics**: Implements essential chess rules, including castling and checkmate detection.
-- **Artificial Intelligence**:
-    - **Minimax Algorithm**: Powers AI decision-making.
-    - **Alpha-Beta Pruning**: Optimizes search efficiency by reducing unnecessary calculations.
-    - **Move Ordering**: Prioritizes more promising moves, enhancing AI response time.
-    - **Evaluation Function**: Custom, comprehensive function for position assessment.
-    - **Opening Book**: Short, manually crafted for early-game strategy.
-    - **Move Memory**: Retains valuable moves across sessions, allowing the engine to improve incrementally.
+## How the engine works
 
-## Project Overview
-Built on my spare time during high school, this project features over 2000 lines of code and provided hands-on experience with core data structures and algorithms. I applied techniques like tree search, pruning, and memory handling to develop a strategic, fully functional chess engine.
+- **Rules.** Legal move generation, including castling, promotion and checkmate detection.
+- **Search.** Minimax with alpha-beta pruning to a depth of 4 plies.
+- **Move ordering.** Captures, checks, threats and central moves are searched first, so alpha-beta prunes more of the tree.
+- **Evaluation.** Material plus positional terms: pawn structure (isolated, doubled and passed pawns), piece development, knight centralization, bishops on the long diagonals, rooks on open files and castling.
+- **Opening book.** A small hand-written book for the first moves.
+- **Move cache.** Best moves found by the search are stored by position (FEN) in `best_moves.pickle` and reused in later games, so repeated positions are answered instantly.
 
-Some areas in the code have room for refinement, but this project helped me deepen my skills in Python, algorithm design, and game development, and it was really fun to build!.
+## Running it
+
+```bash
+pip install pygame
+python main.py
+```
+
+Click a piece and then its destination square to move.
+
+## Code
+
+- `main.py`: game loop, board drawing, move input and the AI (search and evaluation).
+- `move_generator.py`: move generation and move ordering.
+- `functions.py`: board helpers, castling and FEN conversion.
+- `openings.py`: opening book.
+- `settings.py`: window size, colors and frame rate.
+
+## Ideas for later
+
+Castling-rights tracking, quiescence search on captures, king safety in the evaluation, and iterative deepening with a time limit.
